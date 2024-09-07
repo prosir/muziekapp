@@ -1,6 +1,5 @@
 import requests
 from config import api_link
-
 def get_artist_info(artist_name, api_key):
     params = {
         'method': 'artist.getInfo',

@@ -1,8 +1,6 @@
-import requests
-
-from artistinfo import get_artist_info
+from config import api_key
 from toptracks import get_top_tracks
-from config import *
+from artistinfo import get_artist_info
 
 def muziekapp_menu():
     while True:

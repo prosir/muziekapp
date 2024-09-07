@@ -1,6 +1,5 @@
 import requests
-from config import *
-
+from config import api_link
 
 def get_top_tracks(artist_name, api_key):
     params = {
