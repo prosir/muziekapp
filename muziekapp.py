@@ -2,7 +2,7 @@ from config import api_key
 from toptracks import get_top_tracks
 from artistinfo import get_artist_info
 
-def muziekapp_menu():   
+def muziekapp_menu():
 
     while True:
         print("\n##########################################")
