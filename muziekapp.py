@@ -1,9 +1,11 @@
-from config import *
+from config import API_KEY
 from toptracks import get_top_tracks
 from artistinfo import get_artist_info
+from favorite_artist import load_favorite_artists, add_favorite_artist
+
 
 def muziekapp_menu():
-
+    favorite_artists = load_favorite_artists()
     while True:
         print("\n##########################################")
         print("#          Het Muziekapp Menu            #")
@@ -11,12 +13,12 @@ def muziekapp_menu():
         print("# 1. Informatie genres opvragen artiest  #")
         print("# 2. Top 5 tracks opvragen artiest       #")
         print("# 3. Favoriete artiesten opslaan!        #")
-        print("# 4. Afsluiten                           #")
+        print("# 4. Favoriete artiesten bekijken        #")
+        print("# 5. Afsluiten                           #")
         print("##########################################\n")
+    input_user = input("Voer een keuze in (1, 2, 3, 4, 5): ")
 
-        input_user = input("Voer een keuze in (1, 2, 3): ")
-
-        if input_user == "1":
+      if input_user == "1":
             artist_input = input("Voer de naam van de artiest in: ")
             info = get_artist_info(artist_input, API_KEY)
             if not info:
@@ -34,11 +36,16 @@ def muziekapp_menu():
                 for index, track in enumerate(top_tracks, start=1):
                     print(f"{index}. {track}")
         elif input_user == "3":
-            input_favorite = input("Voer de naam van de favoriete artiest in: ")
-
-
-
+                    input_favorite = input("Voer de naam van de favoriete artiest in: ")
+                    add_favorite_artist(input_favorite, favorite_artists)
         elif input_user == "4":
+                if not favorite_artists:
+                    print("Je hebt nog geen favoriete artiesten opgeslagen.")
+                else:
+                    print("Je favoriete artiesten zijn:")
+                    for artist in favorite_artists:
+                        print(f"- {artist}")
+        elif input_user == "5":
             print("Het programma wordt afgesloten.")
             break
 
