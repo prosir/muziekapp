@@ -11,12 +11,8 @@ def get_top_tracks(artist_name, api_key):
     }
     response = requests.get(api_link, params=params)
     if response.status_code == 200:
-        data = response.json()  # Fetch the JSON data if the request was successful
-    else:
-        print(f"Error: Status code {response.status_code}")
+        data = response.json()
 
     if 'toptracks' in data:
         top_tracks = data['toptracks']['track']
         return [track['name'] for track in top_tracks]
-    else:
-        return None

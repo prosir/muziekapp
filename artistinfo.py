@@ -7,9 +7,10 @@ def get_artist_info(artist_name, api_key):
         'api_key': api_key,
         'format': 'json'
     }
+
     response = requests.get(api_link, params=params)
     if response.status_code == 200:
-        data = response.json()  # Fetch the JSON data if the request was successful
+        data = response.json()
     else:
         print(f"Error: Status code {response.status_code}")
 
@@ -20,5 +21,3 @@ def get_artist_info(artist_name, api_key):
             'artist_genres': [tag['name'] for tag in artist_info['tags']['tag']]
         }
         return artist_details
-    else:
-        return None
