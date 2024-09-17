@@ -3,6 +3,7 @@ from config import API_URI, API_KEY
 
 
 def get_top_tracks(artist_name, API_KEY):
+    """Fetches the top tracks for a given artist from the Last.fm API."""
     params = {
         'method': 'artist.getTopTracks',
         'artist': artist_name,
@@ -19,6 +20,7 @@ def get_top_tracks(artist_name, API_KEY):
         return [track['name'] for track in top_tracks]
 
 def get_artist_info(artist_name, API_KEY):
+    """Fetches detailed information for a given artist from the Last.fm API."""
     params = {
         'method': 'artist.getInfo',
         'artist': artist_name,
@@ -41,6 +43,7 @@ def get_artist_info(artist_name, API_KEY):
         return artist_details
 
 def get_top_artists_by_country(country, API_KEY):
+    """Fetches the top 10 artists for a given country from the Last.fm API."""
     params = {
         'method': 'geo.getTopArtists',
         'country': country,

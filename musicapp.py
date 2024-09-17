@@ -3,7 +3,10 @@ from api_functions import *
 from country_translate import *
 
 
-def muziekapp_menu():
+def musicapp_menu():
+    """
+    Displays a menu for the music application and processes user inputs.
+    """
     while True:
         print("\n##########################################")
         print("#          Het Muziekapp Menu            #")

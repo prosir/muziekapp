@@ -1,4 +1,4 @@
-# Comprehensive dictionary mapping Dutch country names to English
+#  Dutch translation to the english one for the API
 country_translation = {
     "Afghanistan": "Afghanistan",
     "Albanië": "Albania",
