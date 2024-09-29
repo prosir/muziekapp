@@ -16,7 +16,7 @@ def musicapp_menu():
         print("# 3. Top 10 artiesten per land opvragen  #")
         print("# 4. Afsluiten                           #")
         print("##########################################\n")
-        input_user = input("Voer een keuze in (1, 2, 3, 4, 5): ")
+        input_user = input("Voer een keuze in (1, 2, 3, 4): ")
 
         if input_user == "1":
             artist_input = input("Voer de naam van de artiest in: ")

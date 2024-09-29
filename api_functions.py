@@ -19,6 +19,7 @@ def get_top_tracks(artist_name, API_KEY):
         top_tracks = data['toptracks']['track']
         return [track['name'] for track in top_tracks]
 
+
 def get_artist_info(artist_name, API_KEY):
     """Fetches detailed information for a given artist from the Last.fm API."""
     params = {
@@ -58,5 +59,4 @@ def get_top_artists_by_country(country, API_KEY):
         if 'topartists' in data:
             top_artists = data['topartists']['artist']
             return [artist['name'] for artist in top_artists]
-    return []
 

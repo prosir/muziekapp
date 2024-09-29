@@ -195,5 +195,4 @@ def translate_country_name(dutch_name):
     for dutch_key, english_value in country_translation.items():
         if dutch_key.lower() == dutch_name.lower():
             translated = english_value
-            break
     return translated
